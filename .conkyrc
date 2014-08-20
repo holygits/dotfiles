@@ -1,0 +1,8 @@
+out_to_console yes
+update_interval 1
+total_run_times 0
+use_spacer none  
+
+#9e5066
+TEXT
+ ^i(/home/jordan/.config/awesome/icons/xbm/arch_10x10.xbm) $kernel.Linux // ^fg(\#5f8787)^i(/home/jordan/.config/awesome/icons/xbm/spkr_01.xbm) ${exec bash ~/scripts/spotty} //^fg(\#808080) ^i(/home/jordan/.config/awesome/icons/xbm/wifi_01.xbm) ^fg(\#808080)${downspeedf wlp8s0} k/s // ^fg(\#8787af)^i(/home/jordan/.config/awesome/icons/xbm/mem.xbm)  RAM $mem/$memmax // ^fg(\#808080)^i(/home/jordan/.config/awesome/icons/xbm/bat_full_01.xbm) Battery=${battery_percent BAT0}% //^fg(\#5f8787) ^i(/home/jordan/.config/awesome/icons/xbm/clock.xbm) ${time %a %d %b %H:%M}  
