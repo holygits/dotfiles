@@ -1,0 +1,17 @@
+<div class='win-container'>
+<p>
+  <strong>
+  	<%= w.name %>
+  </strong>
+</p>
+
+
+
+<div class="progress">
+	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=<%= w.amount / p.income * 100 %> aria-valuemin="0" aria-valuemax="100"
+  style="width: <%= w.amount / p.income * 100 %>%">
+  <span class="sr-only"><%= w.amount / p.income * 100 %>% Complete (Success)</span>
+	<%= "$" + w.amount.to_s %>
+ 	</div>
+ </div>
+ </div>

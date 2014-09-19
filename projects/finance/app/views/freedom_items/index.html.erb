@@ -1,0 +1,27 @@
+<h1>Listing freedom_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @freedom_items.each do |freedom_item| %>
+      <tr>
+        <td><%= freedom_item.name %></td>
+        <td><%= freedom_item.amount %></td>
+        <td><%= link_to 'Show', freedom_item %></td>
+        <td><%= link_to 'Edit', edit_freedom_item_path(freedom_item) %></td>
+        <td><%= link_to 'Destroy', freedom_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Freedom item', new_freedom_item_path %>

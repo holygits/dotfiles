@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @win.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @win.amount %>
+</p>
+
+<%= link_to 'Edit', edit_win_path(@win) %> |
+<%= link_to 'Back', wins_path %>

@@ -1,0 +1,2 @@
+module FreedomItemsHelper
+end

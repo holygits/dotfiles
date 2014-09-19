@@ -1,0 +1,15 @@
+<div class='win-container'>
+<p>
+  <strong>
+  	<%= link_to f.name, edit_freedom_item_path(f.id) %>
+  </strong>
+</p>
+
+<div class="progress">
+	<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=<%= f.amount / left_overs * 100 %> aria-valuemin="0" aria-valuemax="100"
+  style="width: <%= f.amount / left_overs * 100 %>%">
+  <span class="sr-only"><%= f.amount / left_overs * 100 %>% Complete (warning)</span>
+  <%= "$" + f.amount.to_s %>
+ 	</div>
+</div>
+</div>

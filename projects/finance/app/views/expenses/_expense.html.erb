@@ -1,0 +1,16 @@
+<div class='expense-container'>
+
+<p>
+  <strong>
+  	<%= e.name %>
+  </strong>
+</p>
+
+<div class="progress">
+	<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow=<%= e.cost / p.income * 100 %> aria-valuemin="0" aria-valuemax="100"
+  style="width: <%= e.cost / p.income * 100 %>%">
+  <span class="sr-only"><%= e.cost / p.income * 100 %>% Complete (danger)</span>
+  <%= "$" + e.cost.to_s %>
+ 	</div>
+ </div>
+ </div>
