@@ -1,0 +1,12 @@
+#!/bin/bash
+output=$(xrandr)
+
+if [[ $output == *"VGA-0"* ]]
+then
+  xrandr --output VGA-0 --mode 1920x1200 --output LVDS --off
+elif (echo $output == *"HDMI-0"*)
+then
+  xrandr --output HDMI-0 --mode 1920x1080 --output LVDS --off
+else
+  echo 'nothing'
+fi

@@ -1,0 +1,9 @@
+#!/bin/sh
+###ArchSUS
+
+FG='#aaaaaa'
+BG='#111111'
+WIDTH=`/usr/bin/xrandr | /usr/bin/grep "*"`
+#FONT='-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*'
+
+conky | dzen2 -e - -h '18' -w 1920 -ta l -fg $FG -bg $BG -fn ProggySquareTTSZ -x 0 -y 0
