@@ -1,8 +1,8 @@
 out_to_console yes
-update_interval 1
+update_interval 1.0
 total_run_times 0
 use_spacer none
 
 #9e5066
 TEXT
- ^i(/home/jordan/xbm/arch_10x10.xbm) $kernel.Linux  |  ^fg(\#5f8787)^i(/home/jordan/xbm/phones.xbm) ${exec /home/jordan/scripts/now-playing}  |  ^fg(\#808080)^i(/home/jordan/xbm/net_down_01.xbm) ^fg(\#808080)${downspeedf enp6s0}Kb/s  |  ^fg(\#8787af)^i(/home/jordan/xbm/mem.xbm) RAM $mem/$memmax  | ^fg(\#5f8787) ^i(/home/jordan/xbm/clock.xbm) ${time %a %d %b %H:%M}
+ ^i(/home/jordan/xbm/arch_10x10.xbm) $kernel.Linux  |  ^fg(\#5f8787)^i(/home/jordan/xbm/phones.xbm) ${execi 2 /home/jordan/scripts/now-playing}  |  ^fg(\#808080)^i(/home/jordan/xbm/net_down_01.xbm) ^fg(\#808080)${downspeedf enp6s0}Kb/s  |  ^fg(\#8787af)^i(/home/jordan/xbm/mem.xbm) RAM $mem/$memmax  | ^fg(\#5f8787) ^i(/home/jordan/xbm/clock.xbm) ${time %a %d %b %H:%M}
