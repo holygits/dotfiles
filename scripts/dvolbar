@@ -11,15 +11,16 @@ BG="#111111"        # background colour of window
 FG="#eeeeee"        # foreground colour of text/icon
 BAR_FG="#ffffff"    # foreground colour of volume bar
 BAR_BG="#777777"    # background colour of volume bar
-XPOS="705"          # horizontal positioning
+XPOS="835"          # horizontal positioning
 YPOS="500"          # vertical positioning
 HEIGHT="30"         # window height
 WIDTH="250"         # window width
 BAR_WIDTH="165"     # width of volume bar
-ICON=~/vol-hi.xbm
+ICON_PATH=/home/jordan/xbm
+ICON=$ICON_PATH/spkr_01.xbm
 FONT="-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*"
-ICON_VOL=~/vol-hi.xbm
-ICON_VOL_MUTE=~/vol-mute.xbm
+ICON_VOL=$ICON_PATH/spkr_02.xbm
+ICON_VOL_MUTE=$ICON_PATH/spkr_03.xbm
 ICON=$ICON_VOL
 
 #Probably do not customize
@@ -83,4 +84,4 @@ if [ ! -e "$PIPE" ]; then
 fi
 
 #Feed the pipe!
-(echo "$VOL" | gdbar -l "^i(${ICON})" -fg "$BAR_FG" -bg "$BAR_BG" -w "$BAR_WIDTH" ; sleep "$SECS") > "$PIPE"
+(echo "$VOL" | dzen2-gdbar -l "^i(${ICON})" -fg "$BAR_FG" -bg "$BAR_BG" -w "$BAR_WIDTH" ; sleep "$SECS") > "$PIPE"
