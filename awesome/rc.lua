@@ -36,12 +36,9 @@ do
 end
 -- }}}
 
--- Xrandr switch screen to monitor
-os.execute("displays")
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("~/.config/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -87,7 +84,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "H^mE", "_www", "Term$A", "Term$B", "Term$C", "Mu$ic", "ViDE0", "_www2", "$ErvEr" }, s, layouts[2])
+    tags[s] = awful.tag({"1", "2", "3", "4"}, s, layouts[2])
 end
 -- }}}
 
@@ -180,7 +177,7 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = 30 })
-    otherwibox[s] = awful.wibox({ position = "top", screen = s, height = 30 })
+    otherwibox[s] = awful.wibox({ position = "top", screen = s, height = 20 })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -259,8 +256,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
     
     --Gypsy HACKS
-    awful.key({modkey}, "F12", function() awful.util.spawn("dvolbar -i 5") end),    
-    awful.key({modkey}, "F11", function() awful.util.spawn("dvolbar -d 5") end),         
+    awful.key({ modkey }, "XF86AudioRaiseVolume", function() awful.util.spawn("dvolbar -i 5") end),
+    awful.key({ modkey }, "XF86AudioLowerVolume", function() awful.util.spawn("dvolbar -d 5") end),
+    awful.key({ modkey, "Shift" }, "l", function() awful.util.spawn("gnome-screensaver-command -l") end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
