@@ -52,6 +52,13 @@ function style-checks {
 # Do some useful wasm checks in aggregate
 function wasmv {
   wasm-validate $1
+  wasm-objdump -s -j export $1
+  wasm-objdump -s -j import $1
+  echo ""
+  echo "Kindly, letting you grep results..."
+  echo ""
+  sleep 5
+  echo "Dumping next bit..."
   wasm-objdump -x $1
   twiggy paths $1
 }
@@ -65,7 +72,8 @@ alias todo='todolist'
 
 # Vi Mode Setup
 bindkey -v
-export KEYTIMEOUT=1
+export KEYTIMEOUT=20
+bindkey -M viins 'jj' vi-cmd-mode
 
 # Update local node package
 function npm-update {
@@ -81,3 +89,4 @@ function npm-update {
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
