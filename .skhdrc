@@ -1,0 +1,52 @@
+# Focus Desktop
+# Deprecate
+# cmd - 1 : chunkc tiling::desktop --focus 1
+# cmd - 2 : chunkc tiling::desktop --focus 2
+# cmd - 3 : chunkc tiling::desktop --focus 3
+shift + cmd - j : chunkc tiling::desktop --focus prev
+shift + cmd - k : chunkc tiling::desktop --focus next
+
+cmd - 1 : chunkc tiling::monitor -f $(chunkc tiling::query --monitor-for-desktop 1)
+cmd - 2 : chunkc tiling::monitor -f $(chunkc tiling::query --monitor-for-desktop 2)
+cmd - 3 : chunkc tiling::monitor -f $(chunkc tiling::query --monitor-for-desktop 3)
+
+
+# enter fullscreen mode for the focused container
+alt - f : chunkc tiling::window --toggle fullscreen
+
+# change focus between tiling / floating windows
+shift + alt - space : chunkc tiling::window --toggle float
+
+# change layout of desktop
+alt - e : chunkc tiling::desktop --layout bsp
+alt - s : chunkc tiling::desktop --layout monocle
+
+# kill focused window
+shift + cmd - c : chunkc tiling::window --close
+
+# change focus
+alt - h : chunkc tiling::window --focus west
+alt - j : chunkc tiling::window --focus south
+alt - k : chunkc tiling::window --focus north
+alt - l : chunkc tiling::window --focus east
+
+cmd - j : chunkc tiling::window --focus prev
+cmd - k : chunkc tiling::window --focus next
+
+# move focused window
+shift + alt - h : chunkc tiling::window --warp west
+shift + alt - j : chunkc tiling::window --warp south
+shift + alt - k : chunkc tiling::window --warp north
+shift + alt - l : chunkc tiling::window --warp east
+
+alt - r : chunkc tiling::desktop --rotate 90
+
+# move focused container to workspace
+shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+shift + cmd - 1 : chunkc tiling::window --send-to-desktop 1
+shift + cmd - 2 : chunkc tiling::window --send-to-desktop 2
+shift + cmd - 3 : chunkc tiling::window --send-to-desktop 3
+
+shift + cmd -r : chunkc tiling::desktop --rotate 90
+
+cmd - return : open -na /Applications/Alacritty.app
